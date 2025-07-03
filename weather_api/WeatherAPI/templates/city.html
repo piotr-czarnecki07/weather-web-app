@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'master.css' %}">
+    <link rel="stylesheet" href="{% static 'display.css' %}">
+    <title>Weather in {{ location.name }}</title>
+</head>
+<body>
+    <header>
+        <a href="/">Get weather for a new city</a>
+        <div id="localtime">Server time: {{ location.localtime }} (local for entered city)</div>
+    </header>
+
+    <div id="pretitle">Current weather in</div><br>
+    <div id="title">{{ location.name }}</div>
+    {% if location.region != "" %}
+    <div id="shadowthat">{{ location.region }}</div>
+    {% endif %}
+    <div id="country">{{ location.country }}</div>
+
+    <img src="{{ current.condition.icon }}" alt="weather icon" id="weathericon">
+    <div id="dsc">It is {{ current.condition.text }}</div>
+
+    <div class="datacontainer">
+        <div class="tempmain">
+            <div id="temp">Temperature <span id="larger">{{ current.temp_c }}°C / <span id="shadowthat">{{ current.temp_f }}°F</span></span></div>
+            <div id="feelslike">Feels like <span id="larger">{{ current.feelslike_c }}°C / <span id="shadowthat">{{ current.feelslike_f }}°F</span></span></div>
+        </div>
+        <div class="windmain">
+            <div id="wind">Wind velocity <span id="larger">{{ current.wind_kph }} KM/H / <span id="shadowthat">{{ current.wind_mph }} M/H</span></span></div>
+            <div id="windtemp">Wind chill <span id="larger">{{ current.windchill_c }}°C / <span id="shadowthat">{{ current.windchill_f }}°F</span></span></div>
+        </div>
+        <div id="rest">
+            <div id="pressure">Pressure <span id="larger">{{ current.pressure_mb }} mb / <span id="shadowthat">{{ current.pressure_in }} in</span></span></div>
+            <div id="humidity">Humidity <span id="larger">{{ current.humidity }}%</span></div>
+            <div id="cloud">Clouds {{ current.cloud }}%</div>
+        </div>
+    </div>
+
+    <div id="info">Following days</div>
+    {% for forecastday in forecast %}
+        <a href="day/{{ forecastday.day_num }}/">
+            <div class="frame">
+                <img src="{{ forecastday.day.condition.icon }}">
+                <div>{{ forecastday.date }}</div>
+                <div>{{ forecastday.day.avgtemp_c }}°C / {{ forecastday.day.avgtemp_f }}°F</div>
+            </div>
+        </a><br>
+    {% endfor %}
+</body>
+</html>

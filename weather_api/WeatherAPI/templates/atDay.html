@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'master.css' %}">
+    <link rel="stylesheet" href="{% static 'display.css' %}">
+    <title>Weather in {{ city }} on {{ daydata.date }}</title>
+</head>
+<body>
+    <header><a href="/city/{{ city }}/">Current weather in {{ city }}</a><a href="/">Get weather for a new city</a></header>
+    <div id="title"><span id="blodthat">{{ city }}</span>, {{ daydata.date }}</div>
+    <img src="{{ daydata.day.condition.icon }}" alt="there should be an icon" id="weathericon">
+    <div id="dsc">It will be {{ daydata.day.condition.text }}</div>
+
+    <div class="datacontainer">
+        <div id="temp">Avg. Temperature {{ daydata.day.avgtemp_c }}°C / {{ daydata.day.avgtemp_f }}°F</div>
+        <div id="shadowthat" class="maxtemp">Max. Temperature {{ daydata.day.maxtemp_c }}°C / {{ daydata.day.maxtemp_f }}°F</div>
+        <div id="shadowthat" class="mintemp">Min Temperature {{ daydata.day.mintemp_c }}°C / {{ daydata.day.mintemp_f }}°F</div>
+        <br>
+
+        <div id="wind">Max. Wind Velocity {{ daydata.day.maxwind_kph }} KM/H / {{ daydata.day.maxwind_mph }} M/H</div>
+        <div id="humidity">Humidity {{ daydata.day.avghumidity }}%</div>
+        <div id="rain">Chance of rain {{ daydata.day.daily_chance_of_rain }}%</div>
+        <div id="snow">Chance of snow {{ daydata.day.daily_chance_of_snow }}%</div>
+        <br>
+
+        <div id="sunrise">Sunrise {{ daydata.astro.sunrise }}</div>
+        <div id="sunset">Sunset {{ daydata.astro.sunset }}</div>
+        <div id="moonrise">Moonrise {{ daydata.astro.moonrise }}</div>
+        <div id="moonset">Moonset {{ daydata.astro.moonset }}</div>
+        <div id="moonphase">Moonphase {{ daydata.astro.moon_phase }}</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'master.css' %}">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>Weather APP</title>
+</head>
+<body>
+    <div id="title">Weather APP</div>
+    <label for="city">Enter the city you want to get the weather from:</label>
+    <div>
+        <input type="text" maxlength="50" id="city">
+        <button id="submit">Submit</button>
+    </div>
+    <footer>
+        Powered by <a href="https://www.weatherapi.com/" title="Weather API">WeatherAPI.com</a>
+        <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com" border="0"></a>
+    </footer>
+    <script>
+        function enterCity(){
+            let city = document.getElementById('city').value;
+            if (city.length > 0) window.location.href = `/city/${city}/`;
+        }
+        document.addEventListener('keydown', event => {
+            if (event.keyCode == 13) enterCity();
+        });
+        document.getElementById('submit').onclick = enterCity;
+    </script>
+</body>
+</html>

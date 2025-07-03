@@ -1,0 +1,24 @@
+footer{
+	margin-top: auto;
+}
+input{
+	max-width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+button{
+	max-width: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+label{
+	margin-top: 50px;
+}
