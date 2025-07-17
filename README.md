@@ -9,7 +9,7 @@ Saved caches are stored for an hour and then deleted.
 - [Setting up the Environment](#setting-up-the-enviroment)
 - [How to Use](#how-to-use)
 - [License](#license)
-- [Credits](#creadits)
+- [Credits](#credits)
 
 ## Setting up the Environment
 1. Ensure Python 3.10+ is installed.
