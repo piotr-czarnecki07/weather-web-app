@@ -1,5 +1,5 @@
 from django.urls import path
-from WeatherAPI import views
+from weather_app_views import views
 
 urlpatterns = [
     path('', views.main, name='main'),

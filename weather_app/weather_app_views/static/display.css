@@ -1,0 +1,57 @@
+#localtime{
+    font-style: italic;
+    font-size: 15px;
+}
+#pretitle{
+    margin-bottom: -100px;
+    margin-top: 100px;
+}
+#country{
+    font-size: 18px;
+}
+#weathericon{
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#dsc{
+    margin-top: -10px;
+    margin-bottom: 30px;
+    font-size: 19px;
+}
+.datacontainer{
+    text-align: center;
+}
+.tempmain,
+.windmain,
+.rest{
+    display: inline-block;
+    padding: 10px;
+    padding-left: 20px;
+}
+#wind{
+    padding-bottom: 2px;
+}
+#larger{
+    font-size: 17px;
+}
+#cloud{
+    margin-bottom: 50px;
+}
+a{
+    text-align: center;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.frame{
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+	border: 2px solid black;
+    border-radius: 5px;
+    display: inline-block;
+}
+#mintemp,
+#maxtemp{
+    padding-top: 2px;
+}

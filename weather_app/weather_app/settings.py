@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'WeatherAPI'
+    'weather_app_views'
 ]
 
 MIDDLEWARE = [
@@ -43,7 +43,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
-ROOT_URLCONF = 'weather_api.urls'
+ROOT_URLCONF = 'weather_app.urls'
 
 TEMPLATES = [
     {
@@ -61,7 +61,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'weather_api.wsgi.application'
+WSGI_APPLICATION = 'weather_app.wsgi.application'
 
 DATABASES = {
     'default': {

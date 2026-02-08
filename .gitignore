@@ -1,6 +1,6 @@
 info.txt
 venv/
-weather_api/.env
-weather_api/db.sqlite3
-weather_api/static/
-**/__pycache__/
+weather_app/.env
+weather_app/db.sqlite3
+weather_app/static/admin/
+**/__pycache__/**
